@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/edi-capacity-calc/static/css/main.f855e6bc.css",
+    "main.js": "/edi-capacity-calc/static/js/main.604ac458.js",
+    "static/js/453.6315817f.chunk.js": "/edi-capacity-calc/static/js/453.6315817f.chunk.js",
+    "index.html": "/edi-capacity-calc/index.html",
+    "main.f855e6bc.css.map": "/edi-capacity-calc/static/css/main.f855e6bc.css.map",
+    "main.604ac458.js.map": "/edi-capacity-calc/static/js/main.604ac458.js.map",
+    "453.6315817f.chunk.js.map": "/edi-capacity-calc/static/js/453.6315817f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.604ac458.js"
+  ]
+}
