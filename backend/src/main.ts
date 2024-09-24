@@ -6,7 +6,7 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin: 'http://localhost:3001', // Allow only the frontend origin
+    origin: 'https://justisfaulkner.github.io/edi-capacity-calc/', // Allow only the frontend origin
     methods: 'GET,POST,PUT,DELETE',
     credentials: true, // Optional if using cookies or authorization headers
   });
