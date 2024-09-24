@@ -4,9 +4,10 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  const allowedOrigins = ['http://localhost:3001', 'https://justisfaulkner.github.io'];
   // Enable CORS
   app.enableCors({
-    origin: 'https://justisfaulkner.github.io/edi-capacity-calc/', // Allow only the frontend origin
+    origin: allowedOrigins,
     methods: 'GET,POST,PUT,DELETE',
     credentials: true, // Optional if using cookies or authorization headers
   });

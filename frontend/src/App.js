@@ -10,7 +10,7 @@ function App() {
   const calculateTime = async (e) => {
     e.preventDefault();
     
-    const response = await fetch('http://localhost:3000/integrations/calculate', {
+    const response = await fetch(`https://edi-capacity-calc.onrender.com/integrations/calculate`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
