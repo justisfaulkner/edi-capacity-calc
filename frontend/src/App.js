@@ -12,7 +12,7 @@ function App() {
       newHours: 0,
       totalHours: 0,
       availableHours: 496, // 62 working days * 8 hours/day
-      reasonableFactor: 0.4,
+      timeBuffer: 0.4,
     },
     {
       name: "Ethan",
@@ -23,7 +23,7 @@ function App() {
       newHours: 0,
       totalHours: 0,
       availableHours: 120, // 12 work weeks * 10 hours/week
-      reasonableFactor: 0.1,
+      timeBuffer: 0.1,
     },
     {
       name: "Tharun",
@@ -34,7 +34,7 @@ function App() {
       newHours: 0,
       totalHours: 0,
       availableHours: 320, // onboarding end sep, ramp oct, work nov + dev = 40 working days * 8 hours/day
-      reasonableFactor: 0.2,
+      timeBuffer: 0.2,
     },
     {
       name: "Kowsayla",
@@ -45,7 +45,7 @@ function App() {
       newHours: 0,
       totalHours: 0,
       availableHours: 168, // onboarding end of oct, ramp nov, work dev = 21 working days * 8 hours/day
-      reasonableFactor: 0.2,
+      timeBuffer: 0.2,
     },
   ]);
 
@@ -85,7 +85,7 @@ function App() {
     if (person.totalHours > person.availableHours) {
       return "IMPOSSIBLE";
     } else if (
-      person.availableHours - person.reasonableFactor * person.availableHours >
+      person.availableHours - person.timeBuffer * person.availableHours >
       person.totalHours
     ) {
       return "REASONABLE";
@@ -141,6 +141,7 @@ function App() {
           <div key={index} className="person-card">
             <div className="person-section">
               <h2>{person.name}</h2>
+              <p className="buffer">({person.timeBuffer * 100}% time buffer)</p>
               <label>
                 Existing Integrations:
                 <input
@@ -198,7 +199,6 @@ function App() {
               <p className={`status ${getStatus(person).toLowerCase()}`}>
                 {getStatus(person)}
               </p>
-              <p className="buffer">({person.reasonableFactor * 100}% time buffer)</p>
             </div>
           </div>
         ))}

@@ -62,10 +62,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-.results {
-  margin-top: 20px;
-}
-
 form {
   background: white;
   padding: 20px;
@@ -121,8 +117,10 @@ button {
 
 .buffer {
   display: flex;
-  margin: -5px;
   justify-content: center;
+  margin-top: -5px;
+  font-size: small;
+  color: #7d7d7d;
 }
 
 .status {
