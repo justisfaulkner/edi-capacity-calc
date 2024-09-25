@@ -127,7 +127,7 @@ button {
   justify-content: center;
 }
 
-.status.okay {
+.status.reasonable {
   color: #96f696;
   background-color: green;
 }

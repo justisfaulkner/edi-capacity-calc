@@ -88,7 +88,7 @@ function App() {
       person.availableHours - person.reasonableFactor * person.availableHours >
       person.totalHours
     ) {
-      return "OKAY";
+      return "REASONABLE";
     } else {
       return "UNREASONABLE";
     }
