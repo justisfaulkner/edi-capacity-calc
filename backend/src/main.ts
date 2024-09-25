@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import dotenv from 'dotenv';
 
-const dotenv = require('dotenv');
 const envFile =
   process.env.NODE_ENV === 'production'
     ? '.env.production'
@@ -9,6 +9,7 @@ const envFile =
 dotenv.config({ path: envFile });
 
 async function bootstrap() {
+  console.log("Starting application...");
   const app = await NestFactory.create(AppModule);
 
   const allowedOrigins = [
@@ -23,5 +24,6 @@ async function bootstrap() {
   });
 
   await app.listen(3000);
+  console.log("Application created.");
 }
 bootstrap();
