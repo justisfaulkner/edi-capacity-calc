@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/edi-capacity-calc/static/css/main.029ef69a.css",
-    "main.js": "/edi-capacity-calc/static/js/main.be2755ea.js",
+    "main.css": "/edi-capacity-calc/static/css/main.a9f68ce6.css",
+    "main.js": "/edi-capacity-calc/static/js/main.b82469fe.js",
     "static/js/453.6315817f.chunk.js": "/edi-capacity-calc/static/js/453.6315817f.chunk.js",
     "index.html": "/edi-capacity-calc/index.html",
-    "main.029ef69a.css.map": "/edi-capacity-calc/static/css/main.029ef69a.css.map",
-    "main.be2755ea.js.map": "/edi-capacity-calc/static/js/main.be2755ea.js.map",
+    "main.a9f68ce6.css.map": "/edi-capacity-calc/static/css/main.a9f68ce6.css.map",
+    "main.b82469fe.js.map": "/edi-capacity-calc/static/js/main.b82469fe.js.map",
     "453.6315817f.chunk.js.map": "/edi-capacity-calc/static/js/453.6315817f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.029ef69a.css",
-    "static/js/main.be2755ea.js"
+    "static/css/main.a9f68ce6.css",
+    "static/js/main.b82469fe.js"
   ]
 }
