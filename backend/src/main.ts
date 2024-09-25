@@ -9,7 +9,6 @@ const envFile =
 dotenv.config({ path: envFile });
 
 async function bootstrap() {
-  console.log("Starting application...");
   const app = await NestFactory.create(AppModule);
 
   const allowedOrigins = [
@@ -24,6 +23,5 @@ async function bootstrap() {
   });
 
   await app.listen(3000);
-  console.log("Application created.");
 }
 bootstrap();
