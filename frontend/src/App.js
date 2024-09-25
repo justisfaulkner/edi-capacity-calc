@@ -1,5 +1,5 @@
-import './App.css';
-import React, { useState } from 'react';
+import "./App.css";
+import React, { useState } from "react";
 
 function App() {
   const [existing, setExisting] = useState(0);
@@ -9,18 +9,24 @@ function App() {
 
   const calculateTime = async (e) => {
     e.preventDefault();
-    
-    const response = await fetch(`https://edi-capacity-calc.onrender.com/integrations/calculate`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        existing: parseInt(existing),
-        new: parseInt(newIntegrations),
-        concurrent: parseInt(concurrent),
-      }),
-    });
+
+    console.log(`${JSON.stringify(process.env)}`);
+    console.log(process.env.REACT_APP_BACKEND_URL)
+
+    const response = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/integrations/calculate`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          existing: parseInt(existing),
+          new: parseInt(newIntegrations),
+          concurrent: parseInt(concurrent),
+        }),
+      }
+    );
 
     const data = await response.json();
     setTotalTime(data.totalTime);
