@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { json } from 'stream/consumers';
 
 @Injectable()
 export class IntegrationService {
@@ -10,22 +11,44 @@ export class IntegrationService {
   private newIntegrationTime = 16.5; // 16.5 hours per new integration
 
   // Calculate total time based on number of integrations
-  calculateTotalTime(
+  calculateHours(
     existingIntegrations: number,
     newIntegrations: number,
     concurrentIntegrations: number,
-  ): number {
-    const existingIntegrationHours =
-      existingIntegrations * this.existingIntegrationTime;
-    const newIntegrationHours = newIntegrations * this.newIntegrationTime;
+  ) {
+    const existingHours = this.useFormula({
+      integrations: existingIntegrations,
+      integrationTime: this.existingIntegrationTime,
+      concurrentIntegrations: concurrentIntegrations,
+    });
+    const newHours = this.useFormula({
+      integrations: newIntegrations,
+      integrationTime: this.newIntegrationTime,
+      concurrentIntegrations: concurrentIntegrations,
+    });
 
-    const projectTime = existingIntegrationHours + newIntegrationHours;
+    const totalHours = existingHours + newHours;
 
-    // Formula for total time with overhead and tax
-    const totalTime =
-      projectTime *
-      (1 + this.k * Math.log(concurrentIntegrations) * (1 + this.t));
+    return {
+      existingHours,
+      newHours,
+      totalHours,
+    };
+  }
 
-    return totalTime;
+  useFormula({
+    integrations,
+    integrationTime,
+    concurrentIntegrations,
+  }: {
+    integrations: number;
+    integrationTime: number;
+    concurrentIntegrations: number;
+  }): number {
+    return (
+      integrations *
+      integrationTime *
+      (1 + this.k * Math.log10(concurrentIntegrations) * (1 + this.t))
+    );
   }
 }

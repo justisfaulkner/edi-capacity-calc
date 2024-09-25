@@ -11,11 +11,11 @@ export class IntegrationController {
     @Body('new') newIntegrations: number,
     @Body('concurrent') concurrent: number,
   ) {
-    const totalTime = this.integrationService.calculateTotalTime(
+    const times = this.integrationService.calculateHours(
       existing,
       newIntegrations,
       concurrent,
     );
-    return { totalTime };
+    return { times };
   }
 }
