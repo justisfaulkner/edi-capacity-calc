@@ -198,6 +198,7 @@ function App() {
               <p className={`status ${getStatus(person).toLowerCase()}`}>
                 {getStatus(person)}
               </p>
+              <p className="buffer">({person.reasonableFactor * 100}% time buffer)</p>
             </div>
           </div>
         ))}
